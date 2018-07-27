@@ -1,27 +1,70 @@
-# Gtmproject
+# NGGTM - A Google Tag Manager Module For Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+NGGTM helps to create custom events for Google Tag Manager.
 
-## Development server
+  - Easy To Use With Angular
+  - Track custom events
+  - Custom Directives for Buttons, Link etc.
+  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+GTM tag should be configured on the Angular Application before using this module. Follow the below given steps to setup GTM container.
+  
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Navigate to root folder of your angular application and run the following command:
+```shell
+npm install --save nggtm
+```
 
-## Build
+#### Configuration
+Once installed you need to import our main module:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```js
+import {NgGtmModule} from 'nggtm';
+```
 
-## Running unit tests
+The only remaining part is to list the imported module in your application module.
+```js
+...
+import {NgGtmModule} from 'nggtm';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    NgGtmModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
 
-## Running end-to-end tests
+#### Usage In Components
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Usage In Templates
 
-## Further help
+### Custom Events Setup In GTM (Google Tag Manager)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Use the below links to lean to setup custom event in Google Tag Manager:
+
+* [AngularJS] - HTML enhanced for web apps!
+
+
+
+### Todos
+
+ - Write Tests
+ - Add more helper methods
+
+License
+----
+
+MIT
+
+

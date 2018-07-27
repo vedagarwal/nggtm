@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "nggtm": {
+      "root": "projects/nggtm",
+      "sourceRoot": "projects/nggtm/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nggtm/tsconfig.lib.json",
+            "project": "projects/nggtm/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/nggtm/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nggtm/src/test.ts",
+            "tsConfig": "projects/nggtm/tsconfig.spec.json",
+            "karmaConfig": "projects/nggtm/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nggtm/tsconfig.lib.json",
+              "projects/nggtm/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "gtmproject"
